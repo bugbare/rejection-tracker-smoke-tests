@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+COMMON_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/common/" && pwd )"
+
+pushd "$DIR" >/dev/null 2>&1
+
+"$COMMON_DIR/ruby.sh" 2.2.3 2.2.3 >/dev/null
+
+bundle install --path vendor/bundle
+bundle exec cucumber

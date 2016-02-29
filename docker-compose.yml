@@ -1,0 +1,14 @@
+# This Docker Compose configuration file is meant to be used with docker-env. See
+# https://bitbucket.org/springersbm/fig-env.
+
+code:
+  image: docker-registry.tools.pe.springer-sbm.com/springersbm/fig-env-java8-node-ruby-python-phantomjs
+  dns: *DNS
+  volumes:
+    - .:/home/dev/code
+
+deploy:
+  image: docker-registry.tools.pe.springer-sbm.com/springersbm/fig-env-java8-node-ruby-python-phantomjs
+  dns: *DNS
+  volumes:
+    - .:/home/dev/code

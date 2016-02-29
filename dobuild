@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+pushd "$DIR" >/dev/null 2>&1
+trap "{ popd >/dev/null 2>&1; }" EXIT
+
+PROJECT_NAME="$(basename ${DIR})"
+./docker-env -d $PROJECT_NAME -c bash -c "cd $PROJECT_NAME; ./build"

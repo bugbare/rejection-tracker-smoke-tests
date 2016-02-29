@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# If you edit this file, please add or update the "dependencies" setting in app-anatomy.yml to make the
+# pipelines of your dependencies break when they have made a change that breaks your application/service.
+
