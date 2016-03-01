@@ -5,11 +5,18 @@ In order to see how many manuscripts have been rejected for all relevant journal
 I need to be able to see a display of all manuscripts that have been rejected by us and if applicable accepted and published by other organisations
 
 
-Scenario: I am able to see a summary of rejection statistics by publisher and journal (where applicable)
+Scenario Outline: I am able to see a summary of rejection statistics by publisher and journal
 
-GIVEN I am a member of the editorial department
-WHEN I view the rejection tool initial landing page for that publishing brand
-THEN I can see a how many manuscripts have been rejected
-AND I can see how many of these rejected manuscripts are now published by another publishing organisation
-AND I can see the destination journal titles for rejections that went to the top ten publishers by volume
-AND I can see aggregated counts for rejections published by organisation no in the top ten by volume
+Given I am a <role>
+And I have selected to view <brand> rejections
+When I click on the first destination journal title
+Then I see the <expected> page
+
+Examples:
+  |role|brand|expected|
+  |user|bmc|no access|
+  |superuser|bmc|rejection breakdown|
+  |user|nature|no access|
+  |superuser|nature|rejection breakdown|
+  |user|springer|no access|
+  |superuser|springer|rejection breakdown|
