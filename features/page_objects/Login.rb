@@ -1,9 +1,9 @@
 class Login < SitePrism::Page
   set_url "/login"
 
-  element :userNameField, :xpath, "//*[@id='username']"
-  element :passwordField, :xpath, "//*[@id='password']"
-  element :loginButton, "button.btn.waves-effect.waves-light"
+  element :username_field, :xpath, "//*[@id='username']"
+  element :password_field, :xpath, "//*[@id='password']"
+  element :login_button, "button.btn.waves-effect.waves-light"
 
   section :header, ::HeaderSection, "nav.white"
   section :footer, ::FooterSection, "footer.page-footer.blue"

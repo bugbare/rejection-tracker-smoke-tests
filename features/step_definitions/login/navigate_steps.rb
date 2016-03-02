@@ -9,17 +9,17 @@ Given(/^I am a (.*)$/) do |role|
   case role
     when 'user'
       #puts "The current user is: " + role.to_s
-      @app.login.userNameField.set "demo"
-      @app.login.passwordField.set "demo1"
-      @app.login.loginButton.click
+      @app.login.username_field.set "demo"
+      @app.login.password_field.set "demo1"
+      @app.login.login_button.click
       #puts "URL: " + @app.login.current_url + "\n"
       #puts "URL: " + @app.login.title + "\n"
 
     when 'superuser'
       #puts "The current user is: " + role.to_s
-      @app.login.userNameField.set "special"
-      @app.login.passwordField.set "demo2854242"
-      @app.login.loginButton.click
+      @app.login.username_field.set "special"
+      @app.login.password_field.set "demo2854242"
+      @app.login.login_button.click
       #puts "URL: " + @app.login.current_url + "\n"
       #puts "URL: " + @app.login.title + "\n"
   end
