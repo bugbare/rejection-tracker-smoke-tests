@@ -24,4 +24,4 @@
 rerun.txt
 
 # Ignore ide specific files
-.idea
+.idea/
