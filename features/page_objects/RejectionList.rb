@@ -11,8 +11,8 @@ class RejectionList < SitePrism::Page
   element :authors_heading, :xpath, "//th[contains(.,'Authors')]"
   element :published_title_heading, :xpath, "//th[contains(.,'Published Title')]"
 
-# Table Body
-  elements :results_list_items, "tbody"
+# Table First Column
+  elements :results_table_first_column, :xpath, "//table[@class='striped drilldown-table']/tbody/tr/td[1]"
 
 # Header and Footer Sections
   section :header, ::HeaderSection, "nav.white"
