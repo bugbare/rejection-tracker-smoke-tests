@@ -8,6 +8,12 @@ Then (/^I see the (.*) page$/) do |result|
       # Value checks
       current_page = @app.no_access.title
       puts "No Access: " + current_page
+    when 'login page'
+      title = @app.no_access.title.to_s
+      expect(title).to eq("Springer Nature")
+      expect(@app.login).to have_login_button
+      current_page = @app.login.title
+      puts "Login Page: " + current_page
     when 'rejection breakdown'
       title = @app.rejection_list.title.to_s
       if title =~ /All BioMed Central/i

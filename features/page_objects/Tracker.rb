@@ -1,5 +1,6 @@
 class Tracker < SitePrism::Page
-  set_url "/{brand}"
+  #set_url "{/brand}/tracker"
+  set_url "{url}"
 
   element :journal_selector, "input.select-dropdown"
 
@@ -21,5 +22,8 @@ class Tracker < SitePrism::Page
 
   section :header, ::HeaderSection, "nav.white"
   section :footer, ::FooterSection, "footer.page-footer.blue"
+
+# Back to Select Publisher Page
+  element :select_publisher_button, :css, ".waves-effect.waves-light.btn-large.red"
 
 end

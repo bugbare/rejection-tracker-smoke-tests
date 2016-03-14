@@ -1,4 +1,3 @@
-
 Given(/^I have selected to view (.*) rejections$/) do |brand|
   case brand
     when 'bmc'
@@ -18,7 +17,7 @@ Given(/^I have selected to view (.*) rejections$/) do |brand|
       expect(@app.tracker).to have_summary_stats
       $first_brand_link_text=@app.tracker.rejection_chart_first_link.text.split(" : ").last
       $first_brand_link_count=@app.tracker.rejection_chart_first_link.text.split(" : ").first.to_i
-      #puts "\nPage displayed is: " + @app.select_brand.title
+    #puts "\nPage displayed is: " + @app.select_brand.title
     when 'nature'
       #puts "\nThe brand selected is: " + brand.to_s
       @app.select_brand.nature_button.click
@@ -34,7 +33,7 @@ Given(/^I have selected to view (.*) rejections$/) do |brand|
       expect(@app.tracker).to have_destination_heading
       expect(@app.tracker).to have_count_heading
       expect(@app.tracker).to have_summary_stats
-      #puts "\nPage displayed is: " + @app.select_brand.title
+    #puts "\nPage displayed is: " + @app.select_brand.title
     when 'springer'
       #puts "\nThe brand selected is: " + brand.to_s
       @app.select_brand.springer_button.click
@@ -50,6 +49,18 @@ Given(/^I have selected to view (.*) rejections$/) do |brand|
       expect(@app.tracker).to have_destination_heading
       expect(@app.tracker).to have_count_heading
       expect(@app.tracker).to have_summary_stats
-      #puts "\nPage displayed is: " + @app.select_brand.title
+    #puts "\nPage displayed is: " + @app.select_brand.title
   end
 end
+
+And(/^the rejection breakdown page for the brands (.*) are accessible$/) do |brands|
+  for brand in brands.split(',')
+    step "I have selected to view #{brand} rejections"
+    @app.select_brand.springer_button.click
+    @app.tracker.wait_until_rejection_chart_first_link_visible
+
+
+    @app.tracker.select_publisher_button.click
+  end
+end
+
