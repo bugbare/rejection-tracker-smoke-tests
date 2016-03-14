@@ -16,6 +16,8 @@ Given(/^I have selected to view (.*) rejections$/) do |brand|
       expect(@app.tracker).to have_destination_heading
       expect(@app.tracker).to have_count_heading
       expect(@app.tracker).to have_summary_stats
+      $first_brand_link_text=@app.tracker.rejection_chart_first_link.text.split(" : ").last
+      $first_brand_link_count=@app.tracker.rejection_chart_first_link.text.split(" : ").first.to_i
       #puts "\nPage displayed is: " + @app.select_brand.title
     when 'nature'
       #puts "\nThe brand selected is: " + brand.to_s

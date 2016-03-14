@@ -20,14 +20,3 @@ Feature: Track manuscripts that have been rejected by editorial department
       | superuser | nature   | rejection breakdown |
       | user      | springer | no access           |
       | superuser | springer | rejection breakdown |
-
-  Scenario Outline: I am able to see the journal destination page correctly
-
-    Given I am on the destination journal page in the rejection breakdown for the <brand> brand
-    Then the destination journal page is the same as the one accessed from the rejection breakdown page
-
-    Examples:
-      | brand    |
-      | bmc      |
-      | nature   |
-      | springer |
