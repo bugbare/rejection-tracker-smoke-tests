@@ -10,6 +10,8 @@ Then (/^I see the (.*) page$/) do |result|
       unless $first_brand_link_text.nil?
         expect($app.rejection_list.rejection_list_title.text).to include($first_brand_link_text)
         expect($app.rejection_list.results_table_first_column.size).to eq($first_brand_link_count)
+        $first_brand_link_text=nil
+        $first_brand_link_count=nil
       end
   end
 end
