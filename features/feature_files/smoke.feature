@@ -1,4 +1,3 @@
-@wip
 Feature: Track manuscripts that have been rejected by editorial department
 
   As a member of the editorial department

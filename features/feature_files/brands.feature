@@ -1,3 +1,4 @@
+@wip
 Feature: Brand selection post login
 
   As a member of the editorial department

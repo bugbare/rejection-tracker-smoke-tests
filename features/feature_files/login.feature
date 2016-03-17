@@ -1,4 +1,3 @@
-@wip
 Feature: Login for the rejections application
 
   As a member of the editorial department
@@ -23,7 +22,6 @@ Feature: Login for the rejections application
     Then access is denied
 
   #I try to access links step below needs to be fixed
-  @wip
   Scenario: I am unable to access pages requiring authorization without logging in
 
     Given I try to access links that need authorization
