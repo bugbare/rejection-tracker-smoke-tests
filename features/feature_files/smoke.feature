@@ -7,7 +7,7 @@ Feature: Track manuscripts that have been rejected by editorial department
 
   Scenario Outline: I am able to see a summary of rejection statistics by publisher and journal
 
-    Given I am a <role>
+    Given I login as a <role>
     And I have selected to view <brand> rejections
     When I click on the first destination journal title
     Then I see the <expected> page
