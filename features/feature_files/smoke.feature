@@ -13,10 +13,10 @@ Feature: Track manuscripts that have been rejected by editorial department
     Then I see the <expected> page
 
     Examples:
-      | role      | brand    | expected            |
-      | user      | bmc      | no access           |
-      | superuser | bmc      | rejection breakdown |
-      | user      | nature   | no access           |
-      | superuser | nature   | rejection breakdown |
-      | user      | springer | no access           |
-      | superuser | springer | rejection breakdown |
+      | role      | brand    | expected       |
+      | user      | bmc      | no access      |
+      | superuser | bmc      | rejection list |
+      | user      | nature   | no access      |
+      | superuser | nature   | rejection list |
+      | user      | springer | no access      |
+      | superuser | springer | rejection list |

@@ -26,4 +26,7 @@ class Tracker < SitePrism::Page
 # Back to Select Publisher Page
   element :select_publisher_link, :xpath, "//a[text()=' << Select Publisher']"
 
+# Download Data Link
+  element :download_data_link, :xpath, "//a[text()='Download Data']"
+
 end
