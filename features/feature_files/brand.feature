@@ -1,5 +1,5 @@
-@wip
-Feature: Brand selection post login
+@brand
+Feature: Select brand post login
 
   As a member of the editorial department
   In order to see the manuscripts that have been rejected for all relevant journals for a particular brand
@@ -15,4 +15,3 @@ Feature: Brand selection post login
       | role      |
       | user      |
       | superuser |
-

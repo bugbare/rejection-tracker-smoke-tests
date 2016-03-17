@@ -1,4 +1,5 @@
-Feature: Login for the rejections application
+@login
+Feature: Login for the rejections tracking application
 
   As a member of the editorial department
   In order to see the manuscripts that have been rejected for all relevant journals

@@ -24,6 +24,6 @@ class Tracker < SitePrism::Page
   section :footer, ::FooterSection, "footer.page-footer.blue"
 
 # Back to Select Publisher Page
-  element :select_publisher_button, :css, ".waves-effect.waves-light.btn-large.red"
+  element :select_publisher_link, :xpath, "//a[text()=' << Select Publisher']"
 
 end
