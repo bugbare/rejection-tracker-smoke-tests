@@ -4,6 +4,14 @@ Given(/^I am on the rejections breakdown page for (.*) as a (.*)$/) do |brand, r
   navigate_to_tracker_page(brand)
 end
 
+Given(/^I am on the rejections tracker page as a (.*)$/) do |role|
+
+  #todo: move brand list to yaml test data file
+  brand=["bmc","springer","nature"].sample
+  step "I login as a #{role}"
+  navigate_to_tracker_page(brand)
+end
+
 def save_first_tracker_brand_text
 
   $first_brand_link_text=$app.tracker.rejection_chart_first_link.text.split(" : ").last

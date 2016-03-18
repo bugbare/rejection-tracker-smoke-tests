@@ -22,7 +22,6 @@ Feature: Login for the rejections tracking application
     Given I login as an unauthorized user
     Then access is denied
 
-  #I try to access links step below needs to be fixed
   Scenario: I am unable to access pages requiring authorization without logging in
 
     Given I try to access links that need authorization

@@ -1,6 +1,8 @@
-Then(/^the brands (.*) are displayed$/) do |brands|
+Then(/^the brands are displayed$/) do
 
-  for brand in brands.split(',')
+  #todo: move brands to test data yaml
+  brands=["bmc","springer","nature"]
+  for brand in brands
     if brand == "bmc"
       expect($app.select_brand).to have_bmc_button
     elsif brand == "springer"
@@ -15,8 +17,9 @@ end
 
 Given(/^I try to access links that need authorization$/) do
 
+  #todo: this needs a check and a fix
   @tracker = Tracker.new
-  @tracker.load(url: 'http://www.google.com')
+  @tracker.load(url: "/nature/drillDown?&recipientIssn=2045-2322")
 end
 
 Given(/^I am on the brand selection page for user (.*)$/) do |role|

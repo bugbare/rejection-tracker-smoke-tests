@@ -8,8 +8,8 @@ Feature: Select brand post login
   Scenario Outline: I am able to see the in-house brands post login
 
     Given I login as a <role>
-    Then the brands bmc,nature,springer are displayed
-    And the rejection breakdown page for the brands bmc,nature,springer are accessible
+    Then the brands are displayed
+    And the rejection breakdown page for the brands are accessible
 
     Examples:
       | role      |

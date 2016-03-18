@@ -1,6 +1,5 @@
 class Tracker < SitePrism::Page
-  #set_url "{/brand}/tracker"
-  set_url "{url}"
+  set_url "/{url}"
 
 # Journal Selector Drop Down
   element :journal_selector, "input.select-dropdown"

@@ -31,8 +31,9 @@ live: TARGET=live --profile html_report <%= common%> features
 
 html_report: --format pretty --format html --out <%= reportfile%> --format junit --out reports
 
-# WORK IN PROGRESS TAG PROFILE
+# TAG PROFILES
 wip: --tags @wip:3 --wip features
+smoke: --tags @smoke
 
 # DEBUG PROFILES: Must be run in conjuction with an environment profile above
 browser: IN_BROWSER=true PAUSE=1 <%= common%> features

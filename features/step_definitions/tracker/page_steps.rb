@@ -3,9 +3,11 @@ When (/^I click on the first destination journal title$/) do
   $app.tracker.rejection_chart_first_link.click
 end
 
-And(/^the rejection breakdown page for the brands (.*) are accessible$/) do |brands|
+And(/^the rejection breakdown page for the brands are accessible$/) do
 
-  for brand in brands.split(',')
+  #todo: move brands to test data yaml
+  brands=["bmc","springer","nature"]
+  for brand in brands
     navigate_to_tracker_page(brand)
     $app.tracker.select_publisher_link.click
   end
@@ -40,12 +42,14 @@ def validate_rejections_tracker_page
 end
 
 When(/^I select a journal from the list$/) do
+
   @original_items_count=$app.tracker.rejected_count.text.to_i
   $app.tracker.journal_selector.click
   $app.tracker.journal_selector_second_item.click
 end
 
 Then(/^the tracker page is updated to display results for the selected journal$/) do
-  puts @original_items_count
-  expect($app.tracker.rejected_count.text.to_i).to be < @original_items_count
+
+  updated_items_count=$app.tracker.rejected_count.text.to_i
+  expect(updated_items_count).to be < @original_items_count
 end
