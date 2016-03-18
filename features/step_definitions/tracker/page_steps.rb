@@ -9,7 +9,7 @@ And(/^the rejection tracker page is accessible for all brands$/) do
   for brand in brands
     navigate_to_tracker_page(brand)
     validate_rejections_tracker_title
-    $app.tracker.back_to_brands_selection_link.click
+    $app.tracker.select_publisher_link.click
   end
 end
 
@@ -42,7 +42,7 @@ def validate_rejections_tracker_page
   expect($app.tracker).to have_destination_heading
   expect($app.tracker).to have_count_heading
   expect($app.tracker).to have_summary_stats
-  expect($app.tracker).to have_back_to_brands_selection_link
+  expect($app.tracker).to have_select_publisher_link
   expect($app.tracker).to have_download_data_link
 end
 

@@ -31,7 +31,7 @@ class Tracker < SitePrism::Page
   section :footer, ::FooterSection, "footer.page-footer.blue"
 
 # Back to Select Publisher Page
-  element :back_to_brands_selection_link, :xpath, "//a[text()=' << Select Publisher']"
+  element :select_publisher_link, :xpath, "//a[text()=' << Select Publisher']"
 
 # Download Data Link
   element :download_data_link, :xpath, "//a[text()='Download Data']"
