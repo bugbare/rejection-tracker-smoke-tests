@@ -1,0 +1,18 @@
+product_data:
+  brands:
+    bmc:
+      tracker_page_title: "Rejection Tracker for BioMed Central: All BioMed Central journals"
+    springer:
+      tracker_page_title: "Rejection Tracker for Springer: All Springer journals"
+    nature:
+      tracker_page_title: "Rejection Tracker for Nature: All Nature journals"
+  roles:
+    user:
+      username: "demo"
+      password: "demo1"
+    superuser:
+      username: "special"
+      password: "demo2854242"
+    unauthorized_user:
+      username: "unauthorized"
+      password: "password"
