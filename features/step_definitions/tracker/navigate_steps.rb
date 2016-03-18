@@ -6,8 +6,7 @@ end
 
 Given(/^I am on the rejections tracker page as a (.*)$/) do |role|
 
-  #todo: move brand list to yaml test data file
-  brand=["bmc","springer","nature"].sample
+  brand=$product_data["product_data"]["brands"].keys.sample
   step "I login as a #{role}"
   navigate_to_tracker_page(brand)
 end

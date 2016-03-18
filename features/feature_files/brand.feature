@@ -9,7 +9,7 @@ Feature: Select brand post login
 
     Given I login as a <role>
     Then the brands are displayed
-    And the rejection breakdown page for the brands are accessible
+    And the rejection tracker page is accessible for all brands
 
     Examples:
       | role      |

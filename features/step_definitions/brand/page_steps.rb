@@ -1,7 +1,6 @@
 Then(/^the brands are displayed$/) do
 
-  #todo: move brands to test data yaml
-  brands=["bmc","springer","nature"]
+  brands=$product_data["product_data"]["brands"].keys
   for brand in brands
     if brand == "bmc"
       expect($app.select_brand).to have_bmc_button

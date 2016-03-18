@@ -19,7 +19,7 @@ Feature: Login for the rejections tracking application
 
   Scenario: I am unable to login with invalid credentials
 
-    Given I login as an unauthorized user
+    Given I login as an unauthorized_user
     Then access is denied
 
   Scenario: I am unable to access pages requiring authorization without logging in
